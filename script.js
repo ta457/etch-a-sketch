@@ -59,15 +59,19 @@ items = document.querySelectorAll(".grid-item");
 let holding = false;
 
 items.forEach(function (i) {
+    i.ondragstart = function() { return false; };
+
     i.addEventListener('mousedown', function() {
         holding = true;
         i.style.backgroundColor = penColour.value;
         console.log(holding);
     });
+    
     i.addEventListener('mouseup', function() {
         holding = false;
         console.log(holding);
     });
+    
     i.addEventListener('mouseover', function() {
         if(holding == true) {
             i.style.backgroundColor = penColour.value;
