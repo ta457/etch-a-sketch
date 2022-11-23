@@ -2,6 +2,8 @@ let gridContainer = document.querySelector(".grid");
 let penColour = document.getElementById("pen-colour");
 let bgColour = document.getElementById("bg-colour");
 let slider = document.getElementById("range-slider");
+let clearBtn = document.getElementById("clear-btn");
+
 generateGrid(gridContainer, slider.value, bgColour.value);
 
 //generate grid
@@ -64,12 +66,12 @@ items.forEach(function (i) {
     i.addEventListener('mousedown', function() {
         holding = true;
         i.style.backgroundColor = penColour.value;
-        console.log(holding);
+        //console.log(holding);
     });
     
     i.addEventListener('mouseup', function() {
         holding = false;
-        console.log(holding);
+        //console.log(holding);
     });
     
     i.addEventListener('mouseover', function() {
@@ -77,4 +79,19 @@ items.forEach(function (i) {
             i.style.backgroundColor = penColour.value;
         }
     });
+});
+
+//turn off holding when mouse leave the grid area
+gridContainer.addEventListener('mouseleave', function(){
+    holding = false;
+    //console.log(holding);
+});
+
+//generate a new grid when click on Clear button
+clearBtn.addEventListener('mousedown', function() {
+    clearBtn.style.backgroundColor = "#00A6FB";
+    generateGrid(gridContainer, slider.value, bgColour.value);
+});
+clearBtn.addEventListener('mouseup', function() {
+    clearBtn.style.backgroundColor = "#FBFFFE";
 });
