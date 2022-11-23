@@ -1,0 +1,142 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1b1b1e;
+    color: #FBFFFE;
+}
+
+.header,
+.footer,
+.footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    font-size: 48px;
+    font-weight: bold;
+    height: 20vh;
+}
+
+.main {
+    height: 80vh;
+}
+
+.footer {
+    height: 50px;
+    font-style: italic;
+}
+
+/* style the main div ====================================*/
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.controls {
+    width: 300px;
+    height: 650px;
+    background-color: #6D676E;
+    border-radius: 5px;
+}
+
+.grid-container {
+    width: 650px;
+    height: 650px;
+    background-color: #6D676E;
+    border-radius: 5px;
+}
+
+/* style the control panel */
+
+.row {
+    padding: 5px 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.color {
+    height: 30px;
+    width: 60px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.color::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+.color::-webkit-color-swatch {
+    border-radius: 2px;
+    border: none;
+}
+
+#range-slider {
+    width: 100%;
+    appearance: none;
+    outline: none;
+    height: 2px;
+    background-color: #FBFFFE;
+}
+
+#range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #00A6FB;
+    cursor: pointer;
+}
+
+/* style the grid */
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    border-top: 1px #6D676E solid;
+    border-left: 1px #6D676E solid;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.border-right {
+    border-right: 1px #6D676E solid;
+}
+.border-bottom {
+    border-bottom: 1px #6D676E solid;
+}
+
+/* style the footer ======================================*/
+.footer a {
+    text-decoration: none;
+    color: #FBFFFE;
+    gap: 10px;
+}
+
+.footer img {
+    width: 20px;
+}

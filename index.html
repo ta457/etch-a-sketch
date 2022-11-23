@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Etch-a-Sketch</title>
+</head>
+<body>
+    <div class="header">Etch-a-Sketch</div>
+    <div class="main">
+        <div class="controls">
+            <div class="row">
+                <input type="color" class="color" id="pen-colour">
+                <p style="margin:0; line-height:30px;">Pen colour</p>
+            </div>
+            <div class="row">
+                <input type="color" class="color" id="bg-colour" value="#ffffff">
+                <p style="margin:0; line-height:30px;">Background colour</p>
+            </div>
+            <div class="row">
+                <input type="range" value="24" min="1" max="60" id="range-slider">
+            </div>
+            <div class="row" id="range-output" style="margin-top:10px; justify-content:center;"></div>
+        </div>
+        <div class="grid-container">
+            <div class="grid">
+            </div>
+        </div>
+    </div>
+    <div class="footer"><a href="https://github.com/ta457/etch-a-sketch" target="_blank">Copyright © 2022 ta457 <img src="img/github.png" alt="github"></a></div>
+</body>
+</html>
