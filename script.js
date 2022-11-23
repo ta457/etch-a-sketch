@@ -19,6 +19,7 @@ function generateGrid(container, size, bgColour) {
         let gridItem = document.createElement('div');
 
         gridItem.setAttribute('class', 'grid-item');
+        gridItem.setAttribute('draggable', 'false');
         gridItem.id = 'grid-item-' + i;
         gridItem.style.backgroundColor = bgColour;
         gridItem.style.height = itemSize + "px";
@@ -60,6 +61,7 @@ let holding = false;
 items.forEach(function (i) {
     i.addEventListener('mousedown', function() {
         holding = true;
+        i.style.backgroundColor = penColour.value;
         console.log(holding);
     });
     i.addEventListener('mouseup', function() {
