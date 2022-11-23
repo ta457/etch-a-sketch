@@ -54,35 +54,33 @@ slider.oninput = function() {
 }
 
 //fill the grid item when click and hold mouse
-items = document.querySelectorAll(".grid-item");
-
 let holding = false;
 
-items.forEach(function (i) {
-    i.ondragstart = function() { return false; };
+gridContainer.addEventListener('mousedown', function(){
+    holding = true;
 
-    i.addEventListener('mousedown', function() {
-        holding = true;
-        i.style.backgroundColor = penColour.value;
-        //console.log(holding);
-    });
-    
-    i.addEventListener('mouseup', function() {
-        holding = false;
-        //console.log(holding);
-    });
-    
-    i.addEventListener('mouseover', function() {
-        if(holding == true) {
+    items = document.querySelectorAll(".grid-item");
+    items.forEach(function (i) {
+        i.ondragstart = function() { return false; };
+
+        i.addEventListener('mousedown', function() {
             i.style.backgroundColor = penColour.value;
-        }
+        });
+
+        i.addEventListener('mouseover', function() {
+            if(holding == true) {
+                i.style.backgroundColor = penColour.value;
+            }
+        });
     });
+});
+gridContainer.addEventListener('mouseup', function(){
+    holding = false;
 });
 
 //turn off holding when mouse leave the grid area
 gridContainer.addEventListener('mouseleave', function(){
     holding = false;
-    //console.log(holding);
 });
 
 //generate a new grid when the Clear button is clicked
