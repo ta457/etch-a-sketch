@@ -4,8 +4,6 @@ let bgColour = document.getElementById("bg-colour");
 let slider = document.getElementById("range-slider");
 let clearBtn = document.getElementById("clear-btn");
 
-generateGrid(gridContainer, slider.value, bgColour.value);
-
 //generate grid
 function generateGrid(container, size, bgColour) {
     //find the size of grid-item
@@ -27,7 +25,7 @@ function generateGrid(container, size, bgColour) {
         gridItem.style.height = itemSize + "px";
         gridItem.style.width = itemSize + "px";
 
-        //add border right/bottom for items at the edge
+        //add border right/bottom for items at the edges
         if(i % size == 0) {
             gridItem.classList.add("border-right");
         }
@@ -39,15 +37,15 @@ function generateGrid(container, size, bgColour) {
     }
 }
 
-//change color value
-// penColour.oninput = function() {
-//     console.log(penColour.value);
-// }
+//make a grid at the start
+generateGrid(gridContainer, slider.value, bgColour.value);
+
+//when bg color is changed, generage a new grid
 bgColour.oninput = function() {
     generateGrid(gridContainer, slider.value, this.value);
 }
 
-//change range slider value (grid size) & display
+//when grid size is changed, generate a new grid & show the current size
 let output = document.getElementById("range-output");
 output.innerHTML = slider.value + " x " + slider.value;
 slider.oninput = function() {
@@ -87,7 +85,7 @@ gridContainer.addEventListener('mouseleave', function(){
     //console.log(holding);
 });
 
-//generate a new grid when click on Clear button
+//generate a new grid when the Clear button is clicked
 clearBtn.addEventListener('mousedown', function() {
     clearBtn.style.backgroundColor = "#00A6FB";
     generateGrid(gridContainer, slider.value, bgColour.value);
