@@ -9,7 +9,6 @@ function generateGrid(container, size, bgColour) {
     //find the size of grid-item
     let itemSize = 600/size;
 
-    //whenever bg color or size is changed
     //remove existed childs before adding new ones
     while (container.firstChild) {
         container.removeChild(container.lastChild);
@@ -53,8 +52,7 @@ slider.oninput = function() {
     generateGrid(gridContainer, this.value, bgColour.value);
 }
 
-//fill the grid item when hold down mouse
-
+//fill the grid item when click and hold mouse
 items = document.querySelectorAll(".grid-item");
 
 let holding = false;
