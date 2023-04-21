@@ -83,7 +83,7 @@ gridContainer.addEventListener('mouseleave', function(){
     holding = false;
 });
 
-//generate a new grid when the Clear button is clicked
+//generate a new grid when click the Clear button
 clearBtn.addEventListener('mousedown', function() {
     clearBtn.style.backgroundColor = "#00A6FB";
     generateGrid(gridContainer, slider.value, bgColour.value);
